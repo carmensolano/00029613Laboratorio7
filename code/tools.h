@@ -34,8 +34,8 @@ void correctConditions(int n,condition *list,int *indices){
     for(int i=0;i<n-1;i++){
         int pivot = list[i].getNode1();
         for(int j=i;j<n;j++)
-            //Si la condición actual corresponde a un nodo posterior al nodo eliminado por
-            //aplicar la condición anterior, se debe actualizar su posición.
+            //Si la condiciÃ³n actual corresponde a un nodo posterior al nodo eliminado por
+            //aplicar la condiciÃ³n anterior, se debe actualizar su posiciÃ³n.
             if(list[j].getNode1()>pivot)
                 list[j].setNode1(list[j].getNode1()-1);
     }
