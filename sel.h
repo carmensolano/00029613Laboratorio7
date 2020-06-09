@@ -125,7 +125,7 @@ float calculateLocalJ(int i,mesh m){
 
 Matrix createLocalK(int e,mesh &m){
     //Preparaci�n de ingredientes
-    float tau, kappa, lambda, upsilon, psi, deltha, eta ,Ae,J,D;
+    float tau, kappa, lambda, deltha, eta ,Ae,J,D;
     
     //Componentes de K
     // [ A+K  G ]

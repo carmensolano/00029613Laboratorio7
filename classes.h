@@ -1,6 +1,6 @@
 enum lines {NOLINE,SINGLELINE,DOUBLELINE};
 enum modes {NOMODE,INT_FLOAT,INT_FLOAT_FLOAT,INT_INT_INT_INT};
-enum parameters {TAU, KAPPA, LAMBDA, UPSILON, PSI, DELTHA, ETA ,EXTERNAL_FORCE_X,EXTERNAL_FORCE_Y};
+enum parameters {TAU, KAPPA, DELTHA, LAMBDA, ETA ,EXTERNAL_FORCE_X,EXTERNAL_FORCE_Y};
 enum sizes {NODES,ELEMENTS,DIRICHLET};
 enum coords {EQUIS,YE};
 
@@ -109,7 +109,7 @@ class condition: public item{
 };
 
 class mesh{
-        float parameters[7];
+        float parameters[6];
         int sizes[3];
         node *node_list;
         element *element_list;
@@ -117,12 +117,12 @@ class mesh{
         condition *dirichlet_list;
         //condition *neumann_list;
     public:
-        void setParameters(float tau,float kappa, float lambda, float upsilon, float psi, float deltha, float eta , float f_x, float f_y){
+        void setParameters(float tau,float kappa, float deltha, float lambda, float eta , float f_x, float f_y){
             parameters[TAU]=tau;
             parameters[KAPPA]= kappa;
             parameters[LAMBDA]= lambda;
-			parameters[UPSILON]= upsilon; 
-			parameters[PSI]= psi;
+			 
+			
 			parameters[DELTHA]= deltha;
 			parameters[ETA]= eta;
             parameters[EXTERNAL_FORCE_X]=f_x;

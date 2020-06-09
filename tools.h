@@ -74,19 +74,19 @@ void fusionDirichlet(int n1,condition* list1,int n2,condition* list2,int n3,cond
 void leerMallayCondiciones(mesh &m,char *filename){
     char inputfilename[150];
     ifstream file;
-    float tau, kappa, lambda, upsilon, psi, deltha, eta ,f_x,f_y;
+    float tau, kappa, lambda, deltha, eta ,f_x,f_y;
     int nnodes,neltos,ndirich_u,ndirich_v,ndirich_p;
     condition *dirichlet_u, *dirichlet_v, *dirichlet_p;
 
     addExtension(inputfilename,filename,".dat");
     file.open(inputfilename);
 
-    file >> tau >> kappa >> lambda >> upsilon >> psi >> deltha >> eta >> f_x >> f_y ;
+    file >> tau >> kappa >> lambda >>  deltha >> eta >> f_x >> f_y ;
     //cout <<u_bar<<nu<<rho<<f_x<<f_y<<"\n";
     file >> nnodes >> neltos >> ndirich_u >> ndirich_v >>ndirich_p;
     //cout <<nnodes<<neltos<<ndirich_u<<ndirich_v<<ndirich_p<<"\n";
 
-    m.setParameters(tau, kappa, lambda, upsilon, psi, deltha, eta,f_x,f_y);
+    m.setParameters(tau, kappa, lambda, deltha, eta,f_x,f_y);
     m.setSizes(nnodes,neltos,ndirich_u+ndirich_v+ndirich_p);
     m.createData();
 
